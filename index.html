@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Resource Pack Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js"
+          }
+        }
+    </script>
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+<div class="app-container">
+    <header class="app-header">
+        <h1>Resource Pack Viewer</h1>
+        <div class="upload-container">
+            <label class="upload-label">
+                Upload .zip
+                <input type="file" id="file" accept=".zip">
+            </label>
+        </div>
+    </header>
+    <main class="app-main">
+        <aside class="sidebar">
+            <div class="model-list">
+                <div class="search-bar">
+                    <input id="search" placeholder="search...">
+                </div>
+
+                <div class="model-list-content">
+                    <ul id="models"></ul>
+                </div>
+
+                <div class="model-list-footer">
+                    <div class="model-count" id="count">0 models indexed</div>
+                </div>
+
+            </div>
+        </aside>
+        <section class="viewer-section">
+            <div class="placeholder" id="placeholder">Upload a resource-pack .zip</div>
+            <div class="viewer" id="viewer"></div>
+            <div class="error-box" id="error" style="display:none"></div>
+        </section>
+    </main>
+</div>
+</body>
+</html>
